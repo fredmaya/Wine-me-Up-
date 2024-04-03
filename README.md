@@ -1,5 +1,3 @@
-# Project Title
-
 WINE ME UP!
 
 ## Overview
