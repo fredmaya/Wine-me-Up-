@@ -21,7 +21,7 @@ The app will take users input about either their wine choice, or dish/appetizer 
 
 ### Tech Stack
 
-My plan is to use MySQL and express in the server side. React, and maybe bootstrap in the front end.
+MySQL and express in the server side. React, and maybe bootstrap in the front end.
 
 ### APIs
 
@@ -29,20 +29,14 @@ List any external sources of data that will be used in your app.
 
 https://www.wine-searcher.com/trade/ws-api
 https://sampleapis.com/api-list/wines
-and maybe create my own
+and create my own
 
 ### Sitemap
 
 5 pages:
 Home, form, result, not found page and contact us:
 
-### Mockups
-
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
-
 ### Data
-
-Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.
 
 Data base in the server side, or the API:
 
@@ -64,11 +58,6 @@ List endpoints that your server will implement, including HTTP methods, paramete
 3 Get requests: wine, food and appetizer.
 3 post requests: wine, food and appetizer.
 
-### Auth
-
-Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented.
-
-Does not include, its and open application.
 
 ## Roadmap
 
@@ -78,5 +67,5 @@ Sprint 3: styling. 5 days
 
 ## Nice-to-haves
 
-I will try to find some extra APIs that can consider the wines available in Canada. I will also look for reviews in the suggested wine adding taste notes.
+Add some extra APIs that can consider the wines available in Canada and look for reviews in the suggested wine adding taste notes.
 
