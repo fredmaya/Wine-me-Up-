@@ -1,0 +1,28 @@
+body {
+    background-color: #302c2c;
+    font-family: Roboto;
+    color: white;
+
+
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+        margin: 80px;
+        width: 100%;
+        font-size: 20px;
+
+        & select {
+            font-size: large;
+            margin: 20px 0;
+        }
+
+        & input {
+            font-size: large;
+            margin: 20px 0;
+        }
+    }
+
+
+}
