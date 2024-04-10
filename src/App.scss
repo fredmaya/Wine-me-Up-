@@ -1,6 +1,23 @@
+@use './styles/partials/global' as *;
+@use './styles/partials/mixins' as *;
+@use './styles/partials/variables' as *;
+@use "./styles/partials/typography" as *;
+
+
+
 body {
   display: flex;
   margin: 0;
   background-color: #302c2c;
   font-family: Roboto;
 }
+
+// body {
+//   display: flex;
+//   margin: 0;
+//   font-family: $body-font-family;
+//   font-weight: $body-font-weight;
+//   font-size: $body-font-size;
+//   color: $dark-color;
+//   background-color: $secondary-color;
+// }

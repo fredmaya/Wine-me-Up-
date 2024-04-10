@@ -1,7 +1,7 @@
 import "./Header.scss";
 
 //library
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 
 function Header() {
   return (
@@ -13,7 +13,7 @@ function Header() {
           </div>
         </NavLink>
         <div className="navbar__links">
-          <Link to="/form">
+          <Link to="/wine">
             <p className="">Let`s Get Started</p>
           </Link>
         </div>

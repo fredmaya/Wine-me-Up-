@@ -1,5 +1,7 @@
-@use "../../styles/partials/global.scss";
-@use "../../styles/partials/mixins.scss";
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
 
 
 .hero__video {
@@ -25,7 +27,7 @@ main {
     margin: 40px;
 
     // @include tablet {
-
+    //     flex-direction: row;
     // }
 
     & .info {
@@ -45,25 +47,31 @@ main {
 
 }
 
-.button {
-    display: flex;
-    justify-content: center;
-
-
-
-}
-
-button {
-    &:hover {
-        cursor: pointer;
-    }
-
+.bottom__header {
     margin: 20px;
-    padding: 40px;
-    font-size: 40px;
-    border-radius: 30px;
-    background-color: black;
-    text-decoration: none;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
     color: white;
 
+    & .button {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    & button {
+        &:hover {
+            cursor: pointer;
+        }
+
+        margin: 20px;
+        padding: 20px;
+        font-size: 30px;
+        border-radius: 30px;
+        background-color: black;
+        text-decoration: none;
+        color: white;
+
+    }
 }
