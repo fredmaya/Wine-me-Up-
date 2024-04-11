@@ -13,7 +13,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/wine" element={<WinePage />} />
+          <Route path="/form" element={<WinePage />} />
           {/* <Route path="/result" element={<ResultPage />} />  */}
           {/* <Route path="*" element={<NotFoundPage />} /> */}
         </Routes>

@@ -50,17 +50,9 @@ function MainPage() {
         </section>
       </main>
       <section className="bottom__header">
-        <h1>Let`s Get Started</h1>
-        <h2>First, let me know what you have:</h2>
         <div className="button">
-          <Link to="/wine">
-            <button>I have a wine in mind</button>
-          </Link>
-          <Link to="/food">
-            <button>I have some food in mind</button>
-          </Link>
-          <Link to="/appetizer">
-            <button>I have an appetizer in mind</button>
+          <Link to="/form">
+            <button>Let's get started</button>
           </Link>
         </div>
       </section>

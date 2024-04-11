@@ -1,0 +1,70 @@
+.food_option {
+    text-transform: capitalize;
+}
+
+.form-container {
+    display: flex;
+
+    & .foodpairings--header--wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-left: 20px;
+    }
+}
+
+.matching-wines-container,
+.pairings__header--container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: black;
+
+    // width: 80vw;
+
+}
+
+.matching-wines-container {
+    height: 30vh;
+}
+
+.matching-wines-container {
+    & h3 {
+        text-align: center;
+    }
+
+    .country {
+        text-align: center;
+        color: black;
+    }
+
+    & img {
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+
+    }
+}
+
+.foodpairings--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+h3 {
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+
+
+.matching__wine--results {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
