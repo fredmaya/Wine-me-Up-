@@ -165,10 +165,11 @@ function FoodCards() {
           <div className="matching-wines-container">
             {matchingWines.map((wine) => (
               <div className="matching__wine--results" key={wine.id}>
+                <h3>{wine.winery}</h3>
                 <h3>{wine.wine}</h3>
                 <p className="country">Country: {wine.country}</p>
                 <img src={wine.image} alt={wine.wine} />
-                <p>Price: {wine.price_range}</p>
+                <p>Price Range: {wine.price_range}</p>
                 <p>{wine.description}</p>
               </div>
             ))}

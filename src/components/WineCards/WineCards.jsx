@@ -174,7 +174,11 @@ function WineCards() {
           )}
 
           {/* Submit Button */}
-          <button className="submit_button" type="submit">
+          <button
+            className="submit_button"
+            type="submit"
+            disabled={!selectedWineVarietal}
+          >
             Submit
           </button>
         </form>

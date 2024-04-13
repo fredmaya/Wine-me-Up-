@@ -10,5 +10,9 @@
     font-size: large;
     font-weight: bold;
 
+    &:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+    }
 
 }

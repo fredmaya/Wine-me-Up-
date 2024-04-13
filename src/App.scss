@@ -11,7 +11,9 @@ body {
   font-weight: $body-font-weight;
   font-size: $body-font-size;
   color: $dark-color;
-  background-color: rgb(27, 12, 12);
+
+
+  background-color: #540804;
   width: 100%;
 
   & main {
@@ -21,5 +23,11 @@ body {
     justify-content: center;
     width: 90vw;
 
+
   }
+
+  & .hero {
+    background-color: rgba(27, 12, 12, 1);
+  }
+
 }
