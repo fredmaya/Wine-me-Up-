@@ -5,19 +5,46 @@
 
 
 .hero__video {
+    display: none;
+
+    @include tablet {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        top: 0;
+        right: 0;
+        opacity: 50%;
+        object-fit: cover;
+
+
+
+
+        & video {
+            object-fit: cover;
+            width: 100vw;
+            height: 75vh;
+
+
+        }
+    }
+
+}
+
+.hero__img {
+    display: flex;
     padding: 0;
     margin: 0;
     top: 0;
     right: 0;
-    opacity: 50%;
-    object-fit: cover;
+    opacity: 80%;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../../assets/images/marcel-gross-marcelgross-ch-sHTwDYKti6Q-unsplash.jpg");
+    height: 75vh;
+    width: 100vw;
 
-
-    & video {
-        object-fit: cover;
-        width: 100vw;
-        height: 75vh;
-
+    @include tablet {
+        display: none;
     }
 }
 
@@ -26,22 +53,41 @@ main {
     justify-content: center;
     margin: 40px;
 
-    // @include tablet {
-    //     flex-direction: row;
-    // }
-
     & .info {
+        display: flex;
+        flex-direction: column;
         text-align: center;
         white-space: pre-wrap;
         word-wrap: break-word;
+
+        @include tablet {
+            text-align: left;
+            width: 80vw;
+        }
+
+        @include desktop {
+            width: 60vw;
+            text-align: left;
+            text-wrap: pretty;
+            // flex-direction: row;
+
+        }
 
     }
 
     p {
         margin: 20px;
-        font-size: x-large;
-        line-height: 35px;
+        font-size: medium;
+        line-height: 30px;
         color: white;
+
+        @include tablet {
+            font-size: large;
+        }
+
+        @include desktop {
+            font-size: 28px;
+        }
 
     }
 
@@ -61,17 +107,22 @@ main {
     }
 
     & button {
-        &:hover {
-            cursor: pointer;
-        }
 
-        margin: 20px;
-        padding: 20px;
-        font-size: 30px;
-        border-radius: 30px;
-        background-color: black;
-        text-decoration: none;
         color: white;
+        text-align: center;
+        font-weight: bold;
+        background-color: rgb(59, 1, 59);
+        border: 0 none;
+        border-radius: 70px;
+        cursor: pointer;
+        padding: 15px 20px;
+        margin-bottom: 10px;
+        font-size: x-large;
 
+        @include desktop {
+            padding: 30px 40px;
+            margin-bottom: 20px;
+            font-size: xx-large;
+        }
     }
 }

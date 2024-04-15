@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import WineCards from "../../components/WineCards/WineCards";
 import FoodCards from "../../components/FoodCards/FoodCards";
-// import Footer from "../../components/Footer/Footer";
-// import FormPage from "../FormPage/FormPage";
 import "./WinePage.scss";
 
 function WinePage() {
@@ -29,11 +27,11 @@ function WinePage() {
   };
 
   return (
-    <main>
+    <main className="winePage">
       <div className="form">
-        <div className="form-container">
-          <div className="header">
-            <h1>{selectedOption ? "Your Selection" : "Select Option"}</h1>
+        <div className="form__container">
+          <div className="form--header">
+            <h1>{selectedOption ? "Your Selection:" : "Select Option"}</h1>
           </div>
           <div className="startover__button">
             {selectedOption && (
@@ -42,7 +40,7 @@ function WinePage() {
               </button>
             )}
           </div>
-          <div className="body">
+          <div className="result__container">
             {!selectedOption && (
               <div className="selection__cards">
                 <div

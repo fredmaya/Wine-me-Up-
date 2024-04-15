@@ -1,70 +1,232 @@
-.food_option {
-    text-transform: capitalize;
-}
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
 
-.form-container {
+.food_cards--container {
     display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 
-    & .foodpairings--header--wrapper {
+    @include tablet {
+        width: 70vw;
+    }
+
+
+
+    & .food--container--options,
+    & .appetizer--container--options {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
-        margin-left: 20px;
-    }
-}
-
-.matching-wines-container,
-.pairings__header--container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    color: black;
-
-    // width: 80vw;
-
-}
-
-.matching-wines-container {
-    height: 30vh;
-}
-
-.matching-wines-container {
-    & h3 {
-        text-align: center;
-    }
-
-    .country {
-        text-align: center;
-        color: black;
-    }
-
-    & img {
         justify-content: center;
-        align-self: center;
         align-items: center;
 
+
+        #appetizer,
+        #food {
+            font-size: 14px;
+            max-width: $max-width-regular;
+
+
+            @include desktop {
+
+                font-size: $font-size-lg;
+            }
+
+            & option {
+                font-size: 14px;
+                font-weight: bold;
+
+                @include desktop {
+
+                    font-size: $font-size-lg;
+                }
+            }
+
+            &::after {
+                max-height: 50px;
+                font-size: 16px;
+            }
+
+
+
+            @include desktop {
+                max-width: none;
+                width: $max-width-wide;
+                font-size: $font-size-lg;
+            }
+        }
     }
-}
 
-.foodpairings--container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
+    .food_option {
+        text-transform: capitalize;
+        word-wrap: break-word;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-bold;
 
-h3 {
-    text-align: left;
-    margin-left: 20px;
-    margin-bottom: 0;
-}
+        & .food_option--selected::after {
+            height: 20px;
+        }
+
+        @include tablet {
+            margin-bottom: $margin-bottom-md;
+            font-size: $font-size-md;
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    .pairings__header--container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        color: black;
+
+        @include tablet {
+            flex-direction: row;
+        }
+
+
+        .foodpairings__header--wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            flex-direction: column;
+            // width: 400px;
+
+            @include tablet {
+                width: 300px;
+
+            }
+
+            @include desktop {
+                width: 400px;
+            }
+
+
+            & h2 {
+                margin-left: 20px;
+                font-size: 20px;
+            }
+
+            & .header--wrapper--results {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                width: 100%;
+                text-wrap: break-word;
+                white-space: pre-wrap;
+
+
+                & p {
+                    color: black;
+                    font-size: 14px;
+                    text-align: left;
+                    margin: 0 0 0 20px;
+                    text-wrap: break-word;
+                    white-space: pre-wrap;
+                    width: 50%;
+
+                    @include tablet {
+                        font-size: 20px;
+                    }
+                }
+            }
 
 
 
-.matching__wine--results {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 40px;
+        }
+    }
+
+    .foodpairings--container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+
+        h3 {
+            text-align: left;
+            margin-left: 1.25rem;
+            margin-bottom: 0;
+            font-size: 20px;
+        }
+
+
+    }
+
+    .matching__wines--container {
+
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        color: black;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+        }
+
+
+
+        & .matching-wines-wrapper {
+
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            width: 200px;
+            align-items: start;
+            height: $height-matching-wines;
+
+            @include tablet {
+                width: 300px;
+                flex-direction: column;
+            }
+
+            @include desktop {
+                width: 400px;
+            }
+
+
+            & .matching__wine--results {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin-bottom: $margin-bottom-lg;
+                margin-top: $margin-bottom-sm;
+
+
+                h3 {
+                    text-align: center;
+                }
+
+                .country {
+                    text-align: center;
+                    color: black;
+                    margin: 0 0 10px 20px;
+                }
+
+                img {
+                    justify-content: center;
+                    align-self: center;
+                    align-items: center;
+                }
+
+                & p {
+                    font-size: 14px;
+                    text-align: left;
+                    margin: 10px 0 20px 0;
+                    ;
+                    text-wrap: break-word;
+
+                    @include tablet {
+                        font-size: 20px;
+                    }
+
+                }
+            }
+
+
+        }
+    }
 }

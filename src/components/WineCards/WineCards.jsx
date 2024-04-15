@@ -1,5 +1,5 @@
 import "./WineCards.scss";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 function WineCards() {
@@ -174,9 +174,15 @@ function WineCards() {
           )}
 
           {/* Submit Button */}
-          <button className="submit_button" type="submit">
-            Submit
-          </button>
+          <div className="submit_button--container">
+            <button
+              className="submit_button"
+              type="submit"
+              disabled={!selectedWineVarietal}
+            >
+              Submit
+            </button>
+          </div>
         </form>
       )}
 
@@ -184,10 +190,13 @@ function WineCards() {
       {submitted && ( // Only render pairings if form is submitted
         <>
           <div className="pairings--container">
+            <div className="pairings__container--header">
+              <h2>{selectedWineVarietal}:</h2>
+            </div>
             {pairings.food && (
-              <div>
-                <h2>{selectedWineVarietal}</h2>
+              <div className="pairings__results">
                 <strong>Food Pairings:</strong>
+
                 <ul>
                   {pairings.food.map((pairing, index) => (
                     <li key={index} className="typing-animation">
@@ -198,8 +207,9 @@ function WineCards() {
               </div>
             )}
             {pairings.appetizer && (
-              <div>
+              <div className="pairings__results">
                 <strong>Appetizer Pairings:</strong>
+
                 <ul>
                   {pairings.appetizer.map((pairing, index) => (
                     <li key={index} className="typing-animation">
