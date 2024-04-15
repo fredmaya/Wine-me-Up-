@@ -1,0 +1,25 @@
+@use './variables.scss' as *;
+
+$breakpoints: (
+    "mobile": 0px,
+    "tablet": 768px,
+    "desktop": 1280px,
+);
+
+@mixin desktop {
+    @media (min-width: map-get($breakpoints, "desktop")) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: map-get($breakpoints, "tablet")) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (min-width: map-get($breakpoints, "mobile")) {
+        @content;
+    }
+}

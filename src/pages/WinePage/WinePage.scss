@@ -1,0 +1,278 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.winePage {
+    background-image: url(../../assets/images/sven-wilhelm-2cRXSWyMHA8-unsplash.jpg);
+    background-size: cover;
+    background-position: bottom;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form {
+    display: flex;
+    margin-top: 4vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    @include tablet {
+        margin: 4% 10%;
+    }
+
+    & .form__container {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        font-size: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        margin-top: 10%;
+
+
+
+        & label {
+            font-size: 16px;
+
+            @include desktop {
+                font-size: 20px;
+            }
+        }
+
+        @include tablet {
+            padding: 40px;
+        }
+
+        @include desktop {
+            padding: 60px;
+        }
+
+
+
+        & .form--header {
+            margin-bottom: 10px;
+
+            @include tablet {
+                margin-bottom: 20px;
+            }
+
+            & h1 {
+                font-size: 20px;
+
+                @include desktop {
+                    font-size: 30px;
+                }
+
+
+            }
+        }
+
+
+        & select {
+            font-size: large;
+            margin: 20px 0;
+        }
+
+        & input {
+            font-size: large;
+            margin: 20px 0;
+        }
+
+
+
+
+        li {
+            text-transform: capitalize;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+
+.typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+.typing {
+    animation: typing 3s steps(40, end);
+}
+
+
+
+.selection__buttons {
+    border-radius: 7px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(59, 1, 59);
+    border: 0 none;
+    cursor: pointer;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    font-size: medium;
+
+    @include desktop {
+        padding: 15px 20px;
+        margin-bottom: 20px;
+        font-size: large;
+    }
+}
+
+.pairings--container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    & ul {
+        padding: 0;
+        margin-right: 20px;
+        text-wrap: break-word;
+    }
+
+    & h2 {
+        text-align: left;
+    }
+}
+
+.selection__cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+
+
+
+    @include tablet {
+        flex-direction: row;
+        gap: 3vw;
+    }
+
+
+
+
+    & .selection__cards--wine,
+    .selection__cards--food {
+        min-height: 25vh;
+        min-width: 25vw;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        border-radius: 20px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+        opacity: 0.9;
+
+
+        @include tablet {
+            height: 300px;
+            width: 300px;
+        }
+
+        @include desktop {
+            height: 500px;
+            width: 500px;
+        }
+
+
+
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+
+            opacity: 1;
+
+        }
+
+        & p {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 10px 10px 0 10px;
+            font-size: 16px;
+            text-wrap: break-word;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+
+
+            @include tablet {
+                font-size: 20px;
+            }
+
+            @include desktop {
+                font-size: 28px;
+            }
+        }
+    }
+
+    & .selection__cards--wine {
+
+        background-image: url(../../assets/images/pexels-arthur-brognoli-2440525.jpg);
+        margin-bottom: 20px;
+    }
+
+
+    & .selection__cards--food {
+
+        background-image: url(../../assets/images/david-emrich-_sob5Ufm4JY-unsplash.jpg);
+
+    }
+}
+
+.submit_button--container {
+    width: 100%;
+
+    & .submit_button {
+        border-radius: 7px;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        background-color: rgb(59, 1, 59);
+        border: 0 none;
+        border-radius: 1px;
+        cursor: pointer;
+        padding: 8px 12px;
+        margin-bottom: 10px;
+        font-size: medium;
+
+        @include desktop {
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            font-size: large;
+        }
+
+
+        &:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+
+    }
+
+}

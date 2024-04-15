@@ -1,0 +1,134 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.result__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+
+    &:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+    }
+
+    @include tablet {
+        width: 100%;
+    }
+
+}
+
+.select_wine--container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        flex-direction: row;
+    }
+
+
+    & .pairings--container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+
+        @include tablet {
+            flex-direction: column;
+        }
+
+        & .pairings__container--header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+            width: 100%;
+
+            & h2 {
+                font-size: 20px;
+
+                @include desktop {
+                    font-size: 30px;
+                }
+            }
+
+
+        }
+
+        & .pairings__results {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            width: 70vw;
+            font-size: 16px;
+            margin: 0 5%;
+            text-wrap: break-word;
+            white-space: pre-wrap;
+            word-break: break-word;
+
+
+            @include tablet {
+                margin: 5%;
+                width: 100%;
+            }
+
+
+            & strong {
+
+                text-align: left;
+
+                @include tablet {
+                    width: 200px;
+                }
+            }
+
+            & .typing-animation {
+
+                text-align: left;
+
+
+            }
+
+            @include tablet {
+                flex-direction: row;
+                font-size: 22px;
+            }
+
+
+
+            & ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                width: 100%;
+                font-size: 14px;
+                white-space: pre-wrap;
+                margin: 10px 0;
+                text-overflow: clip;
+                text-wrap: break-word;
+
+
+
+
+                @include tablet {
+                    font-size: 20px;
+                    margin: 0;
+                }
+
+                li {
+                    width: 100%;
+                    text-wrap: break-word;
+
+
+
+
+                }
+            }
+        }
+    }
+}

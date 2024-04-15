@@ -1,0 +1,46 @@
+@use './styles/partials/mixins' as *;
+@use './styles/partials/variables' as *;
+@use "./styles/partials/typography" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+  font-size: $body-font-size;
+  color: $dark-color;
+  background-color: rgb(27, 12, 12);
+  // width: 100%;
+
+  #root {
+    width: 100%;
+  }
+
+  & main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    // width: 100%;
+
+
+  }
+
+  & .hero {
+    background-color: rgba(27, 12, 12, 1);
+
+
+    & video {
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+}

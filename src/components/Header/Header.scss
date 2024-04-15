@@ -1,0 +1,52 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+
+header {
+
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+        align-self: space-between;
+        align-items: center;
+        width: 100%;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 10px;
+        z-index: 9999;
+        text-wrap: break-word;
+        gap: 20px;
+
+        @include tablet {
+            padding: 20px;
+        }
+
+        @include desktop {
+            padding: 40px;
+        }
+
+
+        & a {
+            text-decoration: none;
+            color: white;
+
+
+            & p,
+            h2 {
+                font-size: 16px;
+                font-weight: bold;
+
+                @include tablet {
+                    font-size: 24px;
+                }
+
+                @include desktop {
+                    font-size: 25px;
+                }
+            }
+
+        }
+
+
+    }
+}
