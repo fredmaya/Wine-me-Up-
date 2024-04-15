@@ -3,7 +3,6 @@
 @use "../../styles/partials/variables" as *;
 
 
-
 .hero__video {
     display: none;
 
@@ -16,14 +15,10 @@
         opacity: 50%;
         object-fit: cover;
 
-
-
-
         & video {
             object-fit: cover;
             width: 100vw;
             height: 75vh;
-
 
         }
     }

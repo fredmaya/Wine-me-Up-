@@ -12,7 +12,6 @@
     display: flex;
     flex-direction: column;
 
-
 }
 
 .form {
@@ -29,8 +28,6 @@
     @include tablet {
         margin: 4% 10%;
     }
-
-
 
     & .form__container {
         display: flex;
@@ -193,7 +190,6 @@
         opacity: 0.9;
 
 
-        /* Added transition for smooth animation */
         @include tablet {
             height: 300px;
             width: 300px;
@@ -210,19 +206,20 @@
         &:hover {
             cursor: pointer;
             transform: scale(1.05);
-            /* Expand effect */
+
             opacity: 1;
-            /* Opacity effect */
+
         }
 
         & p {
             color: white;
             background-color: rgba(0, 0, 0, 0.5);
-            margin: 10px 0 0 0;
+            margin: 10px 10px 0 10px;
             font-size: 16px;
             text-wrap: break-word;
             white-space: pre-wrap;
             overflow-wrap: break-word;
+
 
             @include tablet {
                 font-size: 20px;
