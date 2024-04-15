@@ -8,6 +8,10 @@
     align-items: center;
     width: 70vw;
 
+    &:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+    }
 
     @include tablet {
         width: 100%;
