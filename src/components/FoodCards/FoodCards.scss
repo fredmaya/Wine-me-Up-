@@ -195,6 +195,9 @@
                 margin-bottom: $margin-bottom-lg;
                 margin-top: $margin-bottom-sm;
 
+                @include desktop {
+                    // margin-left: 5%;
+                }
 
                 h3 {
                     text-align: center;
@@ -216,12 +219,16 @@
                     font-size: 14px;
                     text-align: left;
                     margin: 10px 0 20px 0;
-                    ;
                     text-wrap: break-word;
 
                     @include tablet {
                         font-size: 20px;
                     }
+
+                    @include desktop {
+                        margin-left: 5%;
+                    }
+
 
                 }
             }

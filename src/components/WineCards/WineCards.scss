@@ -31,6 +31,7 @@
         align-items: center;
         width: 100%;
 
+
         @include tablet {
             flex-direction: column;
         }
@@ -43,9 +44,9 @@
             width: 100%;
 
             & h2 {
-                font-size: 22px;
+                font-size: 20px;
 
-                @include tablet {
+                @include desktop {
                     font-size: 30px;
                 }
             }
@@ -58,9 +59,19 @@
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            width: 100%;
+            width: 70vw;
             font-size: 16px;
-            margin-left: 5%;
+            margin: 0 5%;
+            text-wrap: break-word;
+            white-space: pre-wrap;
+            word-break: break-word;
+
+
+            @include tablet {
+                margin: 5%;
+                width: 100%;
+            }
+
 
             & strong {
 
@@ -74,6 +85,8 @@
             & .typing-animation {
 
                 text-align: left;
+
+
             }
 
             @include tablet {
@@ -91,13 +104,23 @@
                 width: 100%;
                 font-size: 14px;
                 white-space: pre-wrap;
+                margin: 10px 0;
+                text-overflow: clip;
+                text-wrap: break-word;
+
+
+
 
                 @include tablet {
                     font-size: 20px;
+                    margin: 0;
                 }
 
-                & li {
+                li {
+                    width: 100%;
                     text-wrap: break-word;
+
+
 
 
                 }

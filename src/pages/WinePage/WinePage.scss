@@ -46,6 +46,8 @@
         box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
         margin-top: 10%;
 
+
+
         & label {
             font-size: 16px;
 
@@ -59,7 +61,7 @@
         }
 
         @include desktop {
-            padding: 100px;
+            padding: 60px;
         }
 
 
@@ -154,6 +156,7 @@
     & ul {
         padding: 0;
         margin-right: 20px;
+        text-wrap: break-word;
     }
 
     & h2 {
