@@ -6,6 +6,10 @@
 .hero__video {
     display: none;
 
+    & video {
+        display: none;
+    }
+
     @include tablet {
         display: flex;
         padding: 0;
@@ -19,6 +23,7 @@
             object-fit: cover;
             width: 100vw;
             height: 75vh;
+            display: flex;
 
         }
     }
