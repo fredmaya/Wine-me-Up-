@@ -1,48 +1,14 @@
-import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import videoHero from "../../assets/images/3188887-hd_1920_1080_25fps.mp4";
+
 import "./MainPage.scss";
-
 function MainPage() {
-  const videoRef = useRef(null);
-  const [isTabletOrLarger, setIsTabletOrLarger] = useState(false);
-
-  useEffect(() => {
-    const tabletMediaQuery = window.matchMedia("(min-width: 768px)");
-
-    const handleTabletOrLargerMode = (event) => {
-      if (event.matches) {
-        setIsTabletOrLarger(true);
-        if (videoRef.current) {
-          videoRef.current.play(); // Start the video when tablet or larger mode is activated
-        }
-      } else {
-        setIsTabletOrLarger(false);
-      }
-    };
-
-    handleTabletOrLargerMode(tabletMediaQuery); // Check tablet or larger mode on initial render
-
-    tabletMediaQuery.addListener(handleTabletOrLargerMode); // Listen for changes in tablet or larger mode
-
-    return () => {
-      tabletMediaQuery.removeListener(handleTabletOrLargerMode); // Clean up the listener
-    };
-  }, []);
-
   return (
     <div>
       <section className="hero">
         <div className="hero__img"></div>
         <div className="hero__video">
-          <video
-            ref={videoRef}
-            src={videoHero}
-            loop
-            muted
-            playsInline
-            role="presentation"
-          />
+          <video src={videoHero} autoPlay loop muted role="presentation" />
         </div>
       </section>
       <main>
