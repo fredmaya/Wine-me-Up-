@@ -6,8 +6,10 @@
 .hero__video {
     display: none;
 
+
     & video {
         display: none;
+
     }
 
     @include tablet {
