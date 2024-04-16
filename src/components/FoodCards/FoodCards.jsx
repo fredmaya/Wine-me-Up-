@@ -11,7 +11,11 @@ function FoodCards() {
   const [matchingWines, setMatchingWines] = useState([]);
   const [submitted, setSubmitted] = useState(false);
 
-  // Fetch wine list from API endpoint
+  // capitalize the first letter of a string in food and appetizer pairing options
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   useEffect(() => {
     const getAllWineList = async () => {
       try {
@@ -33,9 +37,12 @@ function FoodCards() {
       const uniqueAppetizerOptions = new Set();
 
       wineList.forEach((wine) => {
-        const foodPairings = wine.food_pairing.split(/\s*(?:,|\bor\b)\s*/);
-        const appetizerPairings =
-          wine.appetizer_pairing.split(/\s*(?:,|\bor\b)\s*/);
+        const foodPairings = wine.food_pairing
+          .split(/\s*(?:,|\bor\b)\s*/)
+          .map(capitalizeFirstLetter);
+        const appetizerPairings = wine.appetizer_pairing
+          .split(/\s*(?:,|\bor\b)\s*/)
+          .map(capitalizeFirstLetter);
 
         foodPairings.forEach((pairing) => uniqueFoodOptions.add(pairing));
         appetizerPairings.forEach((pairing) =>
@@ -62,17 +69,34 @@ function FoodCards() {
     const selectedFoodWines = [];
     const selectedAppetizerWines = [];
 
+    //trasnform selected food and appetizer to lowercase so it is case insensitive when compared
+
+    const lowercaseSelectedFood = selectedFood.toLowerCase();
+    const lowercaseSelectedAppetizer = selectedAppetizer.toLowerCase();
+
     // Filter wines based on selected food and appetizer
     wineList.forEach((wine) => {
-      if (selectedFood && wine.food_pairing.includes(selectedFood)) {
-        selectedFoodWines.push(wine);
-      }
-      if (
-        selectedAppetizer &&
-        wine.appetizer_pairing.includes(selectedAppetizer)
-      ) {
-        selectedAppetizerWines.push(wine);
-      }
+      const foodPairings = wine.food_pairing.split(/\s*(?:,|\bor\b)\s*/);
+      const appetizerPairings =
+        wine.appetizer_pairing.split(/\s*(?:,|\bor\b)\s*/);
+
+      foodPairings.forEach((pairing) => {
+        if (
+          lowercaseSelectedFood &&
+          pairing.toLowerCase() === lowercaseSelectedFood
+        ) {
+          selectedFoodWines.push(wine);
+        }
+      });
+
+      appetizerPairings.forEach((pairing) => {
+        if (
+          lowercaseSelectedAppetizer &&
+          pairing.toLowerCase() === lowercaseSelectedAppetizer
+        ) {
+          selectedAppetizerWines.push(wine);
+        }
+      });
     });
 
     // Select one matching wine for each pairing
