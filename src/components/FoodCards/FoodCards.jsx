@@ -19,7 +19,10 @@ function FoodCards() {
   useEffect(() => {
     const getAllWineList = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/data/");
+        // const response = await axios.get("http://localhost:8080/data/");
+        const response = await axios.get(
+          "https://wine-me-up-95e2bb54d26d.herokuapp.com/data"
+        );
         setWineList(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
