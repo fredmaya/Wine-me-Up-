@@ -97,6 +97,10 @@
 
         li {
             text-transform: capitalize;
+
+            @include desktop {
+                font-size: 1.25rem;
+            }
         }
 
         @keyframes typing {
