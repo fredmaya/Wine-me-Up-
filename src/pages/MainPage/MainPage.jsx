@@ -5,19 +5,18 @@ import "./MainPage.scss";
 function MainPage() {
   return (
     <div>
-      <section className="hero">
-        <div className="hero__img"></div>
-        <div className="hero__video">
-          <video
-            src={videoHero}
-            autoPlay
-            loop
-            muted
-            playsInline
-            role="presentation"
-          />
-        </div>
-      </section>
+      <div className="hero__img"></div>
+      <div className="hero__video">
+        <video
+          src={videoHero}
+          autoPlay
+          loop
+          muted
+          playsInline
+          role="presentation"
+        />
+      </div>
+
       <main>
         <section className="info">
           <div>

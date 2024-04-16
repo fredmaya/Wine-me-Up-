@@ -9,9 +9,7 @@
 
     & video {
         display: none;
-        plays-inline: false;
-        muted: false;
-        autoplay: false;
+        visibility: hidden;
 
     }
 
@@ -30,6 +28,7 @@
             width: 100vw;
             height: 75vh;
             display: flex;
+            visibility: visible;
 
         }
     }
