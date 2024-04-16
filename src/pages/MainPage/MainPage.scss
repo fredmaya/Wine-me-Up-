@@ -9,10 +9,14 @@
 
     & video {
         display: none;
+        plays-inline: false;
+        muted: false;
+        autoplay: false;
 
     }
 
     @include tablet {
+        object-fit: cover;
         display: flex;
         padding: 0;
         margin: 0;
