@@ -8,7 +8,14 @@ function MainPage() {
       <section className="hero">
         <div className="hero__img"></div>
         <div className="hero__video">
-          <video src={videoHero} autoPlay loop muted role="presentation" />
+          <video
+            src={videoHero}
+            autoPlay
+            loop
+            muted
+            playsInline
+            role="presentation"
+          />
         </div>
       </section>
       <main>
