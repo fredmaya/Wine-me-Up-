@@ -25,6 +25,9 @@ header {
             padding: 40px;
         }
 
+        & .navbar__logo {
+            cursor: pointer;
+        }
 
         & a,
         p,

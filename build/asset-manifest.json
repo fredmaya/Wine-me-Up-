@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.2537ff4a.css",
-    "main.js": "/static/js/main.3e7fb51a.js",
+    "main.css": "/static/css/main.5f119702.css",
+    "main.js": "/static/js/main.4df395f4.js",
     "static/media/3188887-hd_1920_1080_25fps.mp4": "/static/media/3188887-hd_1920_1080_25fps.061259bc405c6c35cd94.mp4",
     "static/media/david-emrich-_sob5Ufm4JY-unsplash.jpg": "/static/media/david-emrich-_sob5Ufm4JY-unsplash.9422d665faca0b58099c.jpg",
     "static/media/marcel-gross-marcelgross-ch-sHTwDYKti6Q-unsplash.jpg": "/static/media/marcel-gross-marcelgross-ch-sHTwDYKti6Q-unsplash.c7bac9bef239124b6e2b.jpg",
     "static/media/pexels-arthur-brognoli-2440525.jpg": "/static/media/pexels-arthur-brognoli-2440525.0754bde93bde24e98b65.jpg",
     "static/media/sven-wilhelm-2cRXSWyMHA8-unsplash.jpg": "/static/media/sven-wilhelm-2cRXSWyMHA8-unsplash.1c0c80f8c77d6eefae9f.jpg",
     "index.html": "/index.html",
-    "main.2537ff4a.css.map": "/static/css/main.2537ff4a.css.map",
-    "main.3e7fb51a.js.map": "/static/js/main.3e7fb51a.js.map"
+    "main.5f119702.css.map": "/static/css/main.5f119702.css.map",
+    "main.4df395f4.js.map": "/static/js/main.4df395f4.js.map"
   },
   "entrypoints": [
-    "static/css/main.2537ff4a.css",
-    "static/js/main.3e7fb51a.js"
+    "static/css/main.5f119702.css",
+    "static/js/main.4df395f4.js"
   ]
 }
