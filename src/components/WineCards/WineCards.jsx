@@ -237,4 +237,3 @@ function WineCards() {
 }
 
 export default WineCards;
-
