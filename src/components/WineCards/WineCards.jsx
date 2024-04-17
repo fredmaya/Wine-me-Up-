@@ -14,6 +14,7 @@ function WineCards() {
     const getAllWineList = async () => {
       try {
         const response = await axios.get(
+          // const response = await axios.get("http://localhost:8080/data/");
           "https://wine-me-up-95e2bb54d26d.herokuapp.com/data"
         );
         setWineList(response.data);
@@ -47,6 +48,7 @@ function WineCards() {
 
     try {
       const response = await axios.get(
+        // const response = await axios.get(`http://localhost:8080/data/${selectedType}`);
         `https://wine-me-up-95e2bb54d26d.herokuapp.com/data/${selectedType}`
       );
       setWineList(response.data);
