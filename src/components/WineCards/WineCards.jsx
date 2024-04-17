@@ -13,7 +13,6 @@ function WineCards() {
   useEffect(() => {
     const getAllWineList = async () => {
       try {
-        // const response = await axios.get("http://localhost:8080/data/");
         const response = await axios.get(
           "https://wine-me-up-95e2bb54d26d.herokuapp.com/data"
         );
@@ -27,22 +26,27 @@ function WineCards() {
     getAllWineList();
   }, []);
 
+  // Function to extract unique wine varietals and sort them alphabetically
   const extractUniqueWineVarietals = () => {
     const uniqueWineVarietals = new Set();
     wineList.forEach((wine) => {
       uniqueWineVarietals.add(wine.wine);
     });
-    return Array.from(uniqueWineVarietals);
+    // Convert Set to array and sort alphabetically
+    return Array.from(uniqueWineVarietals).sort();
   };
+
+  useEffect(() => {
+    setWineVarietals(extractUniqueWineVarietals());
+  }, [wineList]);
 
   const handleWineTypeSelection = async (event) => {
     const selectedType = event.target.value;
     setSelectedWineType(selectedType);
-    setSelectedWineVarietal(""); // Reset selected wine varietal when wine type changes
+    setSelectedWineVarietal("");
 
     try {
       const response = await axios.get(
-        // `http://localhost:8080/data/${selectedType}`
         `https://wine-me-up-95e2bb54d26d.herokuapp.com/data/${selectedType}`
       );
       setWineList(response.data);
