@@ -1,6 +1,8 @@
 import { useState } from "react";
 import WineCards from "../../components/WineCards/WineCards";
 import FoodCards from "../../components/FoodCards/FoodCards";
+import ChatGPTCards from "../../components/ChatGPTCards/ChatGPTCards";
+import Dessert from "../../components/Dessert/Dessert";
 import "./WinePage.scss";
 
 function WinePage() {
@@ -11,6 +13,8 @@ function WinePage() {
     food_pairing: "",
     appetizer_pairing: "",
   });
+  const [foodSelected, setFoodSelected] = useState(false); // Track if food pairing is selected
+  const [showSweetToothButton, setShowSweetToothButton] = useState(true); // Track visibility of "I have a sweet tooth" button
 
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
@@ -24,6 +28,20 @@ function WinePage() {
       food_pairing: "",
       appetizer_pairing: "",
     });
+    setFoodSelected(false); // Reset food selection status
+  };
+
+  const handlePickyButtonClick = () => {
+    setSelectedOption("chatgpt");
+  };
+
+  const handleFoodSelection = () => {
+    setFoodSelected(true); // Set food selection status to true when food pairing is selected
+  };
+
+  const handleSweetToothButtonClick = () => {
+    setSelectedOption("dessert"); // Set selected option to "dessert"
+    setShowSweetToothButton(false); // Hide the "I have a sweet tooth" button when dessert page is shown
   };
 
   return (
@@ -40,6 +58,17 @@ function WinePage() {
               </button>
             )}
           </div>
+          {/* Render "I have a sweet tooth" button only when food is selected and not already on the Dessert page */}
+          {foodSelected && showSweetToothButton && (
+            <div className="sweet_tooth_button--container">
+              <button
+                className="sweet_tooth_button"
+                onClick={handleSweetToothButtonClick}
+              >
+                I have a sweet tooth
+              </button>
+            </div>
+          )}
           <div className="result__container">
             {!selectedOption && (
               <div className="selection__cards">
@@ -58,8 +87,25 @@ function WinePage() {
                 </div>
               </div>
             )}
+            {/* {!selectedOption && (
+              <div className="picky__button__container">
+                <button
+                  className="picky__button"
+                  onClick={handlePickyButtonClick}
+                >
+                  I AM PICKY!
+                </button>
+              </div>
+            )} */}
             {selectedOption === "wine" && <WineCards formData={formData} />}
-            {selectedOption === "food" && <FoodCards formData={formData} />}
+            {/* {selectedOption === "chatgpt" && <ChatGPTCards />} */}
+            {selectedOption === "food" && (
+              <FoodCards
+                formData={formData}
+                onFoodSelect={handleFoodSelection} // Pass a callback to handle food selection
+              />
+            )}
+            {selectedOption === "dessert" && <Dessert />}
           </div>
         </div>
       </div>

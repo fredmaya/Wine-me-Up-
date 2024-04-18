@@ -3,6 +3,7 @@ import Footer from "./components/Footer/Footer.jsx";
 import MainPage from "./pages/MainPage/MainPage.jsx";
 import WinePage from "./pages/WinePage/WinePage.jsx";
 import AboutPage from "./pages/AboutPage/AboutPage.jsx";
+import Dessert from "./components/Dessert/Dessert.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/form" element={<WinePage />} />
           <Route path="/about-us" element={<AboutPage />} />
+          <Route path="/dessert" element={<Dessert />} />
         </Routes>
         <Footer />
       </BrowserRouter>

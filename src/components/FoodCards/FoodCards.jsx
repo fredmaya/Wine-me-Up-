@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./FoodCards.scss";
 
-function FoodCards() {
+function FoodCards({ onFoodSelect }) {
   const [wineList, setWineList] = useState([]);
   const [foodOptions, setFoodOptions] = useState([]);
   const [appetizerOptions, setAppetizerOptions] = useState([]);
@@ -11,7 +11,6 @@ function FoodCards() {
   const [matchingWines, setMatchingWines] = useState([]);
   const [submitted, setSubmitted] = useState(false);
 
-  // capitalize the first letter of a string in food and appetizer pairing options
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
@@ -19,7 +18,6 @@ function FoodCards() {
   useEffect(() => {
     const getAllWineList = async () => {
       try {
-        // const response = await axios.get("http://localhost:8080/data/");
         const response = await axios.get(
           "https://wine-me-up-95e2bb54d26d.herokuapp.com/data"
         );
@@ -33,7 +31,6 @@ function FoodCards() {
     getAllWineList();
   }, []);
 
-  // Extract unique food and appetizer options from wine list and clean the source of info
   useEffect(() => {
     const extractOptions = () => {
       const uniqueFoodOptions = new Set();
@@ -60,7 +57,6 @@ function FoodCards() {
     extractOptions();
   }, [wineList]);
 
-  // Reset matching wines and submission status when options change
   useEffect(() => {
     setMatchingWines([]);
     setSubmitted(false);
@@ -72,12 +68,9 @@ function FoodCards() {
     const selectedFoodWines = [];
     const selectedAppetizerWines = [];
 
-    //trasnform selected food and appetizer to lowercase so it is case insensitive when compared
-
     const lowercaseSelectedFood = selectedFood.toLowerCase();
     const lowercaseSelectedAppetizer = selectedAppetizer.toLowerCase();
 
-    // Filter wines based on selected food and appetizer
     wineList.forEach((wine) => {
       const foodPairings = wine.food_pairing.split(/\s*(?:,|\bor\b)\s*/);
       const appetizerPairings =
@@ -102,7 +95,6 @@ function FoodCards() {
       });
     });
 
-    // Select one matching wine for each pairing
     const matchingWines = [];
     if (selectedFoodWines.length > 0) {
       matchingWines.push(selectedFoodWines[0]);
@@ -113,9 +105,10 @@ function FoodCards() {
 
     setMatchingWines(matchingWines);
     setSubmitted(true);
+    // Call the parent component function to indicate food selection
+    onFoodSelect();
   };
 
-  // Check if form submission is disabled
   const isSubmitDisabled = !selectedFood && !selectedAppetizer;
   const isFoodSelected = !!selectedFood;
   const isAppetizerSelected = !!selectedAppetizer;
@@ -124,7 +117,6 @@ function FoodCards() {
     <div className="food_cards--container">
       {!submitted && (
         <form onSubmit={handleFormSubmit}>
-          {/* Food Pairing Options */}
           <div className="food--container--options">
             <label htmlFor="food">Select Food:</label>
             <select
@@ -147,8 +139,6 @@ function FoodCards() {
               ))}
             </select>
           </div>
-
-          {/* Appetizer Pairing Options */}
           <div className="appetizer--container--options">
             <label htmlFor="appetizer">Select Appetizer:</label>
             <select
@@ -166,8 +156,6 @@ function FoodCards() {
               ))}
             </select>
           </div>
-
-          {/* Display Submit Button */}
           <div className="submit_button--container">
             <button
               className="submit_button"
@@ -179,8 +167,6 @@ function FoodCards() {
           </div>
         </form>
       )}
-
-      {/* Display selected Pairings */}
       {submitted && (
         <div className="foodpairings--container">
           <div className="pairings__header--container">
@@ -201,7 +187,6 @@ function FoodCards() {
               </div>
             )}
           </div>
-          {/* Display matching wines */}
           <div className="matching__wines--container">
             <div className="matching-wines-wrapper">
               {matchingWines.map((wine) => (

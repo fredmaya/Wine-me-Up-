@@ -1,0 +1,258 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.dessert_cards--container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet {
+        width: 70vw;
+    }
+
+
+
+    & .dessert--container--options {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+        #dessert {
+            font-size: 14px;
+            max-width: $max-width-regular;
+
+
+            @include desktop {
+
+                font-size: $font-size-lg;
+            }
+
+            & option {
+                font-size: 14px;
+                font-weight: bold;
+
+                @include desktop {
+
+                    font-size: $font-size-lg;
+                }
+            }
+
+            &::after {
+                max-height: 50px;
+                font-size: 16px;
+            }
+
+
+
+            @include desktop {
+                max-width: none;
+                width: $max-width-wide;
+                font-size: $font-size-lg;
+            }
+        }
+    }
+
+    .dessert_option {
+        text-transform: capitalize;
+        word-wrap: break-word;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-bold;
+
+        & .dessert_option--selected::after {
+            height: 20px;
+        }
+
+        @include tablet {
+            margin-bottom: $margin-bottom-md;
+            font-size: $font-size-md;
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    .pairings__header--container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        color: black;
+
+        @include tablet {
+            flex-direction: row;
+        }
+
+
+        .dessertpairings__header--wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            flex-direction: column;
+            // width: 400px;
+
+            @include tablet {
+                width: 300px;
+
+            }
+
+            @include desktop {
+                width: 400px;
+            }
+
+
+            & h2 {
+                margin-left: 20px;
+                font-size: 20px;
+            }
+
+            & .header--wrapper--results {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                width: 100%;
+                text-wrap: break-word;
+                white-space: pre-wrap;
+
+
+
+                & p {
+                    color: black;
+                    font-size: 14px;
+                    text-align: left;
+                    margin: 0 0 0 20px;
+                    text-wrap: break-word;
+                    white-space: pre-wrap;
+                    width: 50%;
+
+                    @include tablet {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+
+
+        }
+    }
+
+    .dessertpairings--container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+
+        h3 {
+            text-align: left;
+            margin-left: 1.25rem;
+            margin-bottom: 0;
+            font-size: 20px;
+        }
+
+
+    }
+
+    .matching__wines--container {
+
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        color: black;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+        }
+
+
+
+        & .matching-wines-wrapper {
+
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            width: 200px;
+            align-items: start;
+            height: $height-matching-wines;
+
+            @include tablet {
+                width: 300px;
+                flex-direction: column;
+            }
+
+            @include desktop {
+                width: 400px;
+            }
+
+
+            & .matching__wine--results {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin-bottom: $margin-bottom-lg;
+                margin-top: $margin-bottom-sm;
+
+                & .matching__wine--info {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                }
+
+
+                @include desktop {
+                    // margin-left: 5%;
+                }
+
+                h3 {
+                    text-align: left;
+                    color: rgba(128, 0, 128, 1);
+                }
+
+                .country {
+                    text-align: center;
+                    color: rgba(128, 0, 128, 1);
+                    margin: 0 0 10px 20px;
+                    font-weight: bold;
+
+                }
+
+                img {
+                    justify-content: center;
+                    align-self: center;
+                    align-items: center;
+                }
+
+                & p {
+                    font-size: 14px;
+                    text-align: left;
+                    margin: 10px 0 20px 0;
+                    text-wrap: break-word;
+
+                    @include tablet {
+                        font-size: 20px;
+                    }
+
+                    @include desktop {
+                        margin-left: 5%;
+                    }
+
+
+                }
+            }
+
+
+        }
+    }
+}
+
+.sweet_tooth_button--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
