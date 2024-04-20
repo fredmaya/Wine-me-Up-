@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import "./ChatGPTCards.scss";
+import "./PromptCards.scss";
 
 function ChatGPTCards() {
   const [wineBrand, setWineBrand] = useState("");
