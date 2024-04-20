@@ -18,12 +18,8 @@ function ChatGPTCards() {
       const response = await axios.post("http://localhost:8080/prompt", {
         prompt: `food and appetizer pairing suggestions for ${wineBrand} ${wineVarietal}`,
       });
-
-      // Extract pairings from the response
-      const { data } = response;
-
       // Set pairings state
-      setPairings(data);
+      setPairings(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
       // Handle error
