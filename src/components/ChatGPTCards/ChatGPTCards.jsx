@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "./ChatGPTCards.scss";
 
 function ChatGPTCards() {
   const [wineBrand, setWineBrand] = useState("");
@@ -14,16 +15,15 @@ function ChatGPTCards() {
 
     try {
       // Make an API call to ChatGPT with user input
-      const response = await axios.post("CHAT_GPT_API_URL", {
-        wine_brand: wineBrand,
-        wine_varietal: wineVarietal,
+      const response = await axios.post("http://localhost:8080/prompt", {
+        prompt: `food and appetizer pairing suggestions for ${wineBrand} ${wineVarietal}`,
       });
 
       // Extract pairings from the response
-      const { food_pairings, appetizer_pairings } = response.data;
+      const { data } = response;
 
       // Set pairings state
-      setPairings({ food: food_pairings, appetizer: appetizer_pairings });
+      setPairings(data);
     } catch (error) {
       console.error("Error fetching data:", error);
       // Handle error
@@ -34,7 +34,6 @@ function ChatGPTCards() {
 
   return (
     <div className="chatgpt--container">
-      hello testing
       <form onSubmit={handleFormSubmit}>
         <label htmlFor="wineBrand">Wine Brand:</label>
         <input
@@ -54,9 +53,11 @@ function ChatGPTCards() {
           required
         />
 
-        <button type="submit" disabled={isLoading}>
-          {isLoading ? "Loading..." : "Get Pairings"}
-        </button>
+        <div className="prompt--button">
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? "Loading..." : "Get Pairings"}
+          </button>
+        </div>
       </form>
       {pairings.food && (
         <div>

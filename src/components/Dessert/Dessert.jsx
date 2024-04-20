@@ -18,6 +18,7 @@ function Dessert() {
     const getAllWineList = async () => {
       try {
         const response = await axios.get(
+          // const response = await axios.get("http://localhost:8080/data/");
           "https://wine-me-up-95e2bb54d26d.herokuapp.com/data/dessert"
         );
         setWineList(response.data);

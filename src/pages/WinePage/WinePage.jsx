@@ -87,7 +87,7 @@ function WinePage() {
                 </div>
               </div>
             )}
-            {/* {!selectedOption && (
+            {!selectedOption && (
               <div className="picky__button__container">
                 <button
                   className="picky__button"
@@ -96,9 +96,9 @@ function WinePage() {
                   I AM PICKY!
                 </button>
               </div>
-            )} */}
+            )}
             {selectedOption === "wine" && <WineCards formData={formData} />}
-            {/* {selectedOption === "chatgpt" && <ChatGPTCards />} */}
+            {selectedOption === "chatgpt" && <ChatGPTCards />}
             {selectedOption === "food" && (
               <FoodCards
                 formData={formData}
