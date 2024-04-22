@@ -33,12 +33,12 @@ and create my own
 
 ### Sitemap
 
-5 pages:
-Home, form, result, not found page and contact us:
+3 pages:
+Home, about us, cards.
 
 ### Data
 
-Data base in the server side, or the API:
+Data base in the server side using MySQL
 
 [
 {
@@ -56,16 +56,16 @@ Data base in the server side, or the API:
 List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
 
 3 Get requests: wine, food and appetizer.
-3 post requests: wine, food and appetizer.
 
 
 ## Roadmap
 
-Sprint 1: DataBase and server side. It will help me to define how much data I would be working with and the possibilities of my application. 4days
-Sprint 2: Front end functionality, API calls and event handlers. 3days
-Sprint 3: styling. 5 days
+Sprint 1: DataBase and server side.  2days
+Sprint 2: Front end functionality, API calls and event handlers. 2days
+Sprint 3: styling. 2days
 
-## Nice-to-haves
+## In Progress
 
 Add some extra APIs that can consider the wines available in Canada and look for reviews in the suggested wine adding taste notes.
+Add prompt to give the user custom food and appetizer suggestion.
 
